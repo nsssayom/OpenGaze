@@ -6,6 +6,7 @@ class Settings (BaseSettings):
     api_key: str
     api_secret: str
     debug: bool
+    face_landmark_img_exec_command: str
 
     # read from env
     class Config:

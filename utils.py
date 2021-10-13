@@ -6,6 +6,7 @@ import csv
 import json
 import glob
 import shutil
+from config import settings
 
 
 # Utility class for common functions
@@ -50,7 +51,8 @@ class Utils:
     @staticmethod
     def face_landmark_img(image_path):
         # execute FaceLandMarkImg from current directory
-        command = "FaceLandmarkImg -f temp/" + image_path
+        command = settings.face_landmark_img_exec_command + " -f temp/" \
+                 + image_path
         print(command)
         process = subprocess.Popen(command,
                                    cwd=os.path.dirname(
